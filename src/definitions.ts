@@ -6,7 +6,7 @@ export interface InstallerInfoPluginPlugin {
    * {
    *   installingPackageName: "com.android.vending",
    *   originatingPackageName: "",
-   *   initiatingPackageName: "com.android.vending",
+   *   initiatingPackageName: "com.android.vending"
    * }
    *
    * When "" (empty string) is returned, the value was null from the PackageManager API.

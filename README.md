@@ -2,7 +2,7 @@
 
 Capacitor plugin to obtain information about the installation source of the application
 
-This plugin ONLY supports Android! 
+This plugin ONLY supports Android (methods exist but reject on other platforms when called)! 
 This is because there is not an installer for websites, and the installer for iOS/iPadOS apps is always the App Store. 
 
 Note that, if shipping iOS apps for installation on MacOS becomes common, it might be relevant to detect the installation source for iOS apps on MacOS, and jailbroken devices do exist. 
@@ -38,7 +38,7 @@ Output example:
 {
   installingPackageName: "com.android.vending",
   originatingPackageName: "",
-  initiatingPackageName: "com.android.vending",
+  initiatingPackageName: "com.android.vending"
 }
 
 When "" (empty string) is returned, the value was null from the PackageManager API.

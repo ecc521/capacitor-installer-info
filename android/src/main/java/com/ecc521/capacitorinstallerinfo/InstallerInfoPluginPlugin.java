@@ -10,6 +10,7 @@ import android.content.pm.PackageManager;
 import android.content.pm.InstallSourceInfo;
 import android.util.Log;
 import android.os.Build.VERSION;
+import java.util.Objects;
 
 @CapacitorPlugin(name = "InstallerInfoPlugin")
 public class InstallerInfoPluginPlugin extends Plugin {
@@ -34,13 +35,13 @@ public class InstallerInfoPluginPlugin extends Plugin {
                 return;
             }
 
-            ret.put("originatingPackageName", installSourceInfo.getOriginatingPackageName() || "");
-            ret.put("initiatingPackageName", installSourceInfo.getInitiatingPackageName() || "");
-            ret.put("installingPackageName", installSourceInfo.getInstallingPackageName() || "");
+            ret.put("originatingPackageName", Objects.requireNonNullElse(installSourceInfo.getOriginatingPackageName(), ""));
+            ret.put("initiatingPackageName", Objects.requireNonNullElse(installSourceInfo.getInitiatingPackageName(), ""));
+            ret.put("installingPackageName", Objects.requireNonNullElse(installSourceInfo.getInstallingPackageName(), ""));
         }
         else {
             //Use Deprecated getInstallerPackageName
-            ret.put("installingPackageName", packageManager.getInstallerPackageName(packageName) || "");
+            ret.put("installingPackageName", Objects.requireNonNullElse(packageManager.getInstallerPackageName(packageName), ""));
         }
 
         call.resolve(ret);
