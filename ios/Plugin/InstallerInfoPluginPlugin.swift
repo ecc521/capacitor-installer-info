@@ -7,12 +7,7 @@ import Capacitor
  */
 @objc(InstallerInfoPluginPlugin)
 public class InstallerInfoPluginPlugin: CAPPlugin {
-    private let implementation = InstallerInfoPlugin()
-
-    @objc func echo(_ call: CAPPluginCall) {
-        let value = call.getString("value") ?? ""
-        call.resolve([
-            "value": implementation.echo(value)
-        ])
+    @objc func getInstallSourceInfo(_ call: CAPPluginCall) {
+        call.reject("Method not implemented on iOS")
     }
 }

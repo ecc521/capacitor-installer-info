@@ -1,6 +1,6 @@
 {
   "name": "capacitor-installer-info",
-  "version": "0.0.1",
+  "version": "6.0.0",
   "description": "Capacitor plugin to obtain information about the installation source of the application",
   "main": "dist/plugin.cjs.js",
   "module": "dist/esm/index.js",

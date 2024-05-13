@@ -6,8 +6,7 @@ export class InstallerInfoPluginWeb
   extends WebPlugin
   implements InstallerInfoPluginPlugin
 {
-  async echo(options: { value: string }): Promise<{ value: string }> {
-    console.log('ECHO', options);
-    return options;
+  getInstallSourceInfo(): Promise<Record<string, string>> {
+    throw new Error('Method not implemented on web.');
   }
 }
