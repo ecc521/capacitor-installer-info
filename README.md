@@ -29,7 +29,7 @@ npx cap sync
 ### getInstallSourceInfo(...)
 
 ```typescript
-getInstallSourceInfo(details: Record<string, string> | undefined) => Promise<Record<string, string>>
+getInstallSourceInfo(details?: Record<string, string> | undefined) => Promise<Record<string, string>>
 ```
 
 Obtain the installation source information for the given package name using PackageManager.getInstallSourceInfo
@@ -44,9 +44,9 @@ Output example:
 When "" (empty string) is returned, the value was null from the PackageManager API.
 When no value is returned for a key, the value could not be calculated given the Android API level or for other reasons.
 
-| Param         | Type                                                            | Description                                                                                                        |
-| ------------- | --------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------ |
-| **`details`** | <code><a href="#record">Record</a>&lt;string, string&gt;</code> | : string} \| undefined. If packageName undefined or no object passed, the package name of the current app is used. |
+| Param         | Type                                                            | Description                                                                                           |
+| ------------- | --------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------- |
+| **`details`** | <code><a href="#record">Record</a>&lt;string, string&gt;</code> | : string}. If packageName undefined or no object passed, the package name of the current app is used. |
 
 **Returns:** <code>Promise&lt;<a href="#record">Record</a>&lt;string, string&gt;&gt;</code>
 
